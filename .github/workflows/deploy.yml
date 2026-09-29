@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose environment"
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ inputs.environment }}
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy Information
+
+        run: |
+          echo "Environment: ${{ inputs.environment }}"
+          echo "URL: ${{ secrets.APP_URL }}"
+
+      - name: Simulate Deployment
+
+        run: |
+          echo "Deploying application..."
+          sleep 5
+          echo "Deployment Successful"
