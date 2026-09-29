@@ -9,8 +9,9 @@ on:
         type: choice
         options:
           - dev
-          - staging
-          - prod
+          - staging_demo
+          - prod_demo
+        
 
 jobs:
 
