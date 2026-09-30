@@ -40,8 +40,7 @@ jobs:
 
       - name: Run Lint
         run: |
-          flake8 . --ignore=E302,E305,W292
-
+          flake8 . 
       - name: Run Tests
         run: |
           pytest
