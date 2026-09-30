@@ -1,14 +1,16 @@
-name: Reusable Test
-on: workflow_call:
-  jobs:
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
+name: Reusable Python Test Workflow
+on:
+  workflow_call:
 
-        - name: Run Tests
-          run: |
-            echo "Running tests..."
-            sleep 3
-            echo "Tests completed successfully"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          sleep 5
+          echo "Tests completed successfully!"
